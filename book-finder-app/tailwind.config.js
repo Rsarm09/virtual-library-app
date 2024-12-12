@@ -10,6 +10,10 @@ export default {
         'lobster': ['Lobster', 'sans-serif'],
         'nunito': ['nunito', 'sans-serif'],
       },
+      colors: {
+        'sienna': '#772F1A',
+        'field': '#585123',
+      },
     },
   },
   plugins: [],

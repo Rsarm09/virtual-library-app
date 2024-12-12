@@ -46,14 +46,14 @@ const BookList = () => {
 
     return (
         <div className='bg-amber-50 min-h-screen'>
-            <h1 className='font-lobster text-stone-700 font-bold text-4xl lg:text-6xl text-center p-10'>My BookList</h1>
+            <h1 className='font-lobster text-sienna font-bold text-4xl lg:text-6xl text-center p-10'>My BookList</h1>
             <div className='text-center flex flex-col lg:flex-row justify-center font-nunito'>
-                <Link to="/" className='bg-stone-700 text-center text-sm rounded-full font-bold text-amber-50 mx-24 p-2 lg:text-lg lg:mx-5 lg:px-6 lg:py-3 hover:bg-stone-800 transition'>Back to Home</Link>
+                <Link to="/" className='bg-sienna text-center text-sm rounded-full font-bold text-amber-50 mx-24 p-2 lg:text-lg lg:mx-5 lg:px-6 lg:py-3 hover:bg-stone-800 transition'>Back to Home</Link>
             </div>
             <ul className='m-6 sm:m-12 lg:m-24 flex flex-wrap justify-center font-nunito'>
                 {books.map(book => (
                     <li key={book.id} className='w-full sm:w-1/2 lg:w-1/3 p-3 sm:p-5 flex justify-center hover:shadow-lg transition'>
-                        <Link to={`/book/${book.id}`} className='text-lime-800 font-bold hover:underline w-full flex justify-center'>
+                        <Link to={`/book/${book.id}`} className='text-field font-bold hover:underline w-full flex justify-center'>
                         {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? ( 
                             <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className='max-w-full' /> 
                         ) : ( 
@@ -64,11 +64,11 @@ const BookList = () => {
                         </Link>
                         <div className='bg-white flex flex-col justify-center items-center w-full p-4 sm:p-6'>
                             <div className='text-center w-full sm:w-2/3'>
-                                <Link to={`/book/${book.id}`} className='text-lime-800 font-bold hover:underline'>{book.volumeInfo.title}</Link>
+                                <Link to={`/book/${book.id}`} className='text-field font-bold hover:underline'>{book.volumeInfo.title}</Link>
                             </div>
                             <p className='text-center w-full sm:w-2/3'>Author: {book.volumeInfo.authors?.join(', ')}</p>
                             <div className='text-center mt-4'>
-                                <button className='bg-lime-800 px-4 py-2 font-bold rounded-full text-amber-50 hover:bg-lime-900 transition' onClick={() => removeFavourite(book.id)}>Remove Favourite</button>
+                                <button className='bg-field px-4 py-2 font-bold rounded-full text-amber-50 hover:bg-lime-800 transition' onClick={() => removeFavourite(book.id)}>Remove Favourite</button>
                             </div>
                         </div>
                     </li>

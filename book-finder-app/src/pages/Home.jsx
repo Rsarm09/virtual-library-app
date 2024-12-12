@@ -42,10 +42,10 @@ const Home = () => {
 
     return (
         <div className='bg-amber-50'>
-            <h1 className='font-lobster text-stone-700 font-bold text-4xl lg:text-6xl text-center p-10'>My Virtual Library</h1>
+            <h1 className='font-lobster text-sienna font-bold text-4xl lg:text-6xl text-center p-10'>My Virtual Library</h1>
 
             <div className='text-center flex flex-col lg:flex-row justify-center font-nunito'>
-                <Link to="/booklist" className='bg-stone-700 text-center text-sm rounded-full font-bold text-amber-50 mx-24 p-2 lg:text-lg lg:mx-5 lg:px-6 lg:py-3 hover:bg-stone-800 transition'>View BookList</Link>
+                <Link to="/booklist" className='bg-sienna text-center text-sm rounded-full font-bold text-amber-50 mx-24 p-2 lg:text-lg lg:mx-5 lg:px-6 lg:py-3 hover:bg-stone-800 transition'>View BookList</Link>
                 <div className='flex justify-center m-5 lg:m-0'>
                     <input
                         type="text"
@@ -57,7 +57,7 @@ const Home = () => {
                     />
 
                     <button className='mx-2' onClick={searchBooks}>
-                        <IonIcon className='p-2 text-2xl text-amber-50 bg-stone-700 rounded-full hover:bg-stone-800 transition' name='search'></IonIcon>
+                        <IonIcon className='p-2 text-2xl text-amber-50 bg-sienna rounded-full hover:bg-stone-800 transition' name='search'></IonIcon>
                     </button>
                 </div>
             </div>
@@ -66,7 +66,7 @@ const Home = () => {
                 {books && books.length > 0 ? (
                     books.map((book) => (
                         <li key={book.id} className='w-full sm:w-1/2 lg:w-1/3 p-3 sm:p-5 flex justify-center hover:shadow-lg transition'>
-                            <Link to={`/book/${book.id}`} className='text-lime-800 font-bold hover:underline w-full flex justify-center'>
+                            <Link to={`/book/${book.id}`} className='text-field font-bold hover:underline w-full flex justify-center'>
                                 <img
                                     src={book.volumeInfo.imageLinks.thumbnail}
                                     alt={book.volumeInfo.title}
@@ -76,14 +76,14 @@ const Home = () => {
                                 <div className='text-center w-full sm:w-2/3'>
                                     <Link
                                         to={`/book/${book.volumeInfo.title}`}
-                                        className='text-lime-800 font-bold hover:underline'
+                                        className='text-field font-bold hover:underline'
                                     >
                                         {book.volumeInfo.title}
                                     </Link>
                                 </div>
                                 <p className='text-center w-full sm:w-2/3'>Author: {book.volumeInfo.authors?.join(', ')}</p>
                                 <div className='text-center mt-4'>
-                                    <button onClick={() => toggleFavourite(book)} className='bg-lime-800 px-4 py-2 font-bold rounded-full text-amber-50 hover:bg-lime-900 transition'>
+                                    <button onClick={() => toggleFavourite(book)} className='bg-field px-4 py-2 font-bold rounded-full text-amber-50 hover:bg-lime-800 transition'>
                                         {favourites.includes(book.id) ? '- Remove from Booklist' : '+ Add to Book List'}
                                     </button>
                                 </div>

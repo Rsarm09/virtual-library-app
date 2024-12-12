@@ -44,7 +44,7 @@ const Home = () => {
         <div className='bg-amber-50'>
             <h1 className='font-lobster text-stone-700 font-bold text-4xl lg:text-6xl text-center p-10'>My Virtual Library</h1>
 
-            <div className='text-center flex flex-col lg:flex-row justify-center'>
+            <div className='text-center flex flex-col lg:flex-row justify-center font-nunito'>
                 <Link to="/booklist" className='bg-stone-700 text-center text-sm rounded-full font-bold text-amber-50 mx-24 p-2 lg:text-lg lg:mx-5 lg:px-6 lg:py-3 hover:bg-stone-800 transition'>View BookList</Link>
                 <div className='flex justify-center m-5 lg:m-0'>
                     <input
@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <ul className='m-6 sm:m-12 lg:m-24 flex flex-wrap justify-center'>
+            <ul className='m-6 sm:m-12 lg:m-24 flex flex-wrap justify-center font-nunito'>
                 {books && books.length > 0 ? (
                     books.map((book) => (
                         <li key={book.id} className='w-full sm:w-1/2 lg:w-1/3 p-3 sm:p-5 flex justify-center hover:shadow-lg transition'>

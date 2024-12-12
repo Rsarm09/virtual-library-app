@@ -20,8 +20,9 @@ const Details = () => {
     }
 
     return (
-        <div className='bg-amber-50 min-h-screen p-6'> <h1 className='text-6xl font-lobster text-center text-stone-700'>{book.volumeInfo.title}</h1>
-            <div className='flex flex-col items-center justify-center mt-8'>
+        <div className='bg-amber-50 min-h-screen p-6'> 
+            <h1 className='text-6xl font-lobster text-center text-stone-700'>{book.volumeInfo.title}</h1>
+            <div className='flex flex-col items-center justify-center mt-8 font-nunito'>
                 <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className='max-w-xs rounded shadow-md' />
                 <div className='container mt-6 text-stone-700'> 
                     <p className='mb-2 text-center'><strong>Authors:</strong> {book.volumeInfo.authors?.join(', ')}</p>

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'lobster': ['Lobster', 'sans-serif'],
+        'nunito': ['nunito', 'sans-serif'],
       },
     },
   },

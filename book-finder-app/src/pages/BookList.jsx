@@ -54,14 +54,14 @@ const BookList = () => {
                 {books.map(book => (
                     <li key={book.id} className='w-full sm:w-1/2 lg:w-1/3 p-3 sm:p-5 flex justify-center hover:shadow-lg transition'>
                         <Link to={`/book/${book.id}`} className='text-field font-bold hover:underline w-full flex justify-center'>
-                        {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? ( 
-                            <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className='max-w-full' /> 
-                        ) : ( 
-                            <div className='w-32 h-48 bg-gray-200 flex items-center justify-center'> 
-                            <span>No Image</span> 
-                            </div>
-                        )}
-                        </Link>
+                                {book.volumeInfo.imageLinks?.thumbnail ? (
+                                    <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} className='max-w-full' />
+                                ) : (
+                                    <div className='w-32 h-48 bg-gray-200 flex items-center justify-center'>
+                                        <span>No Cover Available</span>
+                                    </div>
+                                )}
+                            </Link>
                         <div className='bg-white flex flex-col justify-center items-center w-full p-4 sm:p-6'>
                             <div className='text-center w-full sm:w-2/3'>
                                 <Link to={`/book/${book.id}`} className='text-field font-bold hover:underline'>{book.volumeInfo.title}</Link>

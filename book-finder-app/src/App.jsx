@@ -5,6 +5,10 @@ import BookList from "./pages/BookList.jsx";
 import Home from "./pages/Home.jsx";
 import Details from "./pages/Details.jsx";
 
+
+//Rana Sarmiento A01377150
+//Web Scripting 2 Term Project
+
 function App() {
 
   return (

@@ -5,9 +5,10 @@ const Details = () => {
     const { id } = useParams();
     const [book, setBook] = useState(null);
 
+    //API key in the .env file, imported
     const API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
-
+//Fetching specific book's id 
     useEffect(() => {
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${id}&key=${API_KEY}`)
             .then(response => response.json())
@@ -15,11 +16,13 @@ const Details = () => {
             .catch(error => console.error('Error Fetching Book Details:', error));
     }, [id, API_KEY])
 
+    //Fallback if books are taking a while to fetch
     if (!book) {
-        return <div>Loading...</div>
+        return <div className='bg-amber-50 min-h-screen'>Loading...</div>
     }
 
     return (
+        //Displays book information, including the title, cover, author, and description
         <div className='bg-amber-50 min-h-screen p-6'> 
             <h1 className='text-6xl font-lobster text-center text-sienna'>{book.volumeInfo.title}</h1>
             <div className='flex flex-col items-center justify-center mt-8 font-nunito'>
